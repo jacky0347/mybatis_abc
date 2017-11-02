@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jacky.mybatis.dao.RoleMapper">
+    <select id="getRole" parameterType="long" resultType="role">
+        <!-- ?#{???}???????????????????????????????????? -->
+        select * from mybatis_role where id = #{id}
+    </select>
+    <insert id="insertRole" parameterType="role">
+        insert into mybatis_role(name,note) values(#{name},#{note})
+    </insert>
+    <delete id="deleteRole" parameterType="long">
+        delete from mybatis_role where id =#{id}
+    </delete>
+</mapper>
